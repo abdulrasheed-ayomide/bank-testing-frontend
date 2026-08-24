@@ -1,0 +1,258 @@
+.hero {
+  background:
+    radial-gradient(circle at 15% 0%, var(--sfb-green-tint) 0%, transparent 45%),
+    var(--sfb-bg);
+  padding: 72px 0 40px;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sfb-green-deep);
+  background: var(--sfb-green-tint);
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.headline {
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.05;
+}
+
+.sub {
+  font-size: 16px;
+  color: var(--sfb-ink-soft);
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* Signature ledger card */
+.ledgerCard {
+  background: var(--sfb-green-deep);
+  color: #fff;
+  border: none;
+  padding: 26px;
+  animation: floatIn 0.7s var(--ease-standard);
+}
+
+.ledgerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 18px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sfb-green-bright);
+  box-shadow: 0 0 12px 2px var(--sfb-green-glow);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.ledgerBalance {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 18px;
+}
+
+.ledgerLabel {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.ledgerAmount {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.ledgerRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 10px;
+}
+
+.statusPill {
+  color: var(--sfb-green-bright);
+  font-weight: 600;
+}
+
+.ledgerFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.ledgerFooter .mono {
+  margin-left: auto;
+  color: var(--sfb-green-bright);
+}
+
+.section {
+  padding: 64px 24px;
+}
+
+.sectionHead {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.sectionHead h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.sectionHead p {
+  color: var(--sfb-ink-faint);
+  font-size: 14.5px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.featureCard h4 {
+  font-size: 15px;
+  margin: 14px 0 6px;
+}
+
+.featureCard p {
+  font-size: 13.5px;
+  color: var(--sfb-ink-faint);
+  line-height: 1.55;
+}
+
+.featureIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--sfb-green-tint);
+  color: var(--sfb-green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step {
+  padding: 8px 0;
+  border-top: 2px solid var(--sfb-border);
+}
+
+.stepNum {
+  display: block;
+  font-size: 13px;
+  color: var(--sfb-green);
+  margin: 14px 0 10px;
+}
+
+.step h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.step p {
+  font-size: 13.5px;
+  color: var(--sfb-ink-faint);
+}
+
+.securityBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: var(--sfb-green-tint);
+  border-color: transparent;
+}
+
+.securityIcon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--sfb-green-deep);
+  color: var(--sfb-green-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.securityBanner h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.securityBanner p {
+  font-size: 13.5px;
+  color: var(--sfb-ink-soft);
+  line-height: 1.6;
+}
+
+.inlineLink {
+  color: var(--sfb-green-deep);
+  font-weight: 600;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

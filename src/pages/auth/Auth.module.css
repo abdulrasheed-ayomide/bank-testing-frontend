@@ -1,0 +1,110 @@
+.header {
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 13.5px;
+  color: var(--sfb-ink-faint);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.footerLink {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--sfb-ink-faint);
+}
+
+.footerLink a {
+  color: var(--sfb-green-deep);
+  font-weight: 600;
+}
+
+.formError {
+  background: var(--sfb-red-tint);
+  color: var(--sfb-red);
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--sfb-ink-soft);
+  line-height: 1.5;
+}
+
+.checkboxRow input {
+  margin-top: 3px;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--sfb-green-deep);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0;
+}
+
+.otpBoxes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 8px 0 4px;
+}
+
+.otpBox {
+  width: 46px;
+  height: 54px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  border: 1.5px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--sfb-bg);
+}
+.otpBox:focus {
+  outline: none;
+  border-color: var(--sfb-green);
+  box-shadow: 0 0 0 3px var(--sfb-green-glow);
+  background: var(--sfb-surface);
+}
+
+.resendRow {
+  text-align: center;
+  font-size: 13px;
+  color: var(--sfb-ink-faint);
+}
+
+@media (max-width: 420px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}

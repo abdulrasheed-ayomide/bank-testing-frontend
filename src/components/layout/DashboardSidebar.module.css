@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sfb-ink-soft);
+  transition: background 0.15s var(--ease-standard), color 0.15s var(--ease-standard);
+}
+
+.link:hover {
+  background: var(--sfb-green-tint);
+  color: var(--sfb-green-deep);
+}
+
+.active {
+  background: var(--sfb-green-deep);
+  color: #fff;
+}
+
+.icon {
+  display: flex;
+  font-size: 17px;
+}

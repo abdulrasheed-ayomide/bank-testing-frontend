@@ -1,0 +1,132 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--sfb-ink-soft);
+  width: fit-content;
+}
+.back:hover {
+  color: var(--sfb-green-deep);
+}
+
+.headerGrid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sfb-green-deep);
+  color: var(--sfb-green-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.profileCard h2 {
+  font-size: 17px;
+}
+
+.email {
+  font-size: 13px;
+  color: var(--sfb-ink-faint);
+  margin-bottom: 6px;
+}
+
+.infoRows {
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sfb-border);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--sfb-ink-soft);
+  padding: 7px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 22px;
+}
+
+.txCard {
+  overflow: hidden;
+}
+
+.txHead {
+  font-size: 15px;
+  padding: 20px 22px 4px;
+}
+
+.creditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 12px;
+}
+
+.selectLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sfb-ink-soft);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.select {
+  width: 100%;
+  border: 1px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  background: var(--sfb-surface);
+  font-size: 14px;
+}
+.select:focus {
+  outline: none;
+  border-color: var(--sfb-green);
+  box-shadow: 0 0 0 3px var(--sfb-green-glow);
+}
+
+@media (max-width: 800px) {
+  .headerGrid {
+    grid-template-columns: 1fr;
+  }
+}

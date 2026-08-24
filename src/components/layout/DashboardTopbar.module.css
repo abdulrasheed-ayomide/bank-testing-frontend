@@ -1,0 +1,120 @@
+.bar {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--sfb-surface);
+  border-bottom: 1px solid var(--sfb-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sfb-ink);
+}
+
+.title {
+  font-size: 17px;
+}
+
+.userMenu {
+  position: relative;
+}
+
+.userBtn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: none;
+  border: 1px solid var(--sfb-border);
+  border-radius: 999px;
+  padding: 6px 12px 6px 6px;
+  color: var(--sfb-ink);
+}
+.userBtn:hover {
+  border-color: var(--sfb-border-strong);
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sfb-green-deep);
+  color: var(--sfb-green-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.userName {
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--sfb-surface);
+  border: 1px solid var(--sfb-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
+  min-width: 170px;
+  padding: 6px;
+  animation: fadeIn 0.15s var(--ease-standard);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--sfb-ink);
+  text-align: left;
+}
+.dropdownItem:hover {
+  background: var(--sfb-green-tint);
+}
+
+.danger {
+  color: var(--sfb-red);
+}
+.danger:hover {
+  background: var(--sfb-red-tint);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .menuBtn {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .userName {
+    display: none;
+  }
+}

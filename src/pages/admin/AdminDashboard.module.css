@@ -1,0 +1,62 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.recentHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recentHead h3 {
+  font-size: 16px;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sfb-green-deep);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sfb-ink-faint);
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--sfb-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--sfb-border);
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.right {
+  text-align: right;
+}

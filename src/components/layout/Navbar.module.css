@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 250, 248, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sfb-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  background: var(--sfb-green-deep);
+  color: var(--sfb-green-bright);
+  padding: 5px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sfb-ink-soft);
+  position: relative;
+  padding: 6px 0;
+}
+
+.link:hover {
+  color: var(--sfb-ink);
+}
+
+.linkActive {
+  color: var(--sfb-ink);
+}
+
+.linkActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--sfb-green);
+  border-radius: 2px;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 8px;
+}
+
+.toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sfb-ink);
+}
+
+@media (max-width: 860px) {
+  .toggle {
+    display: flex;
+  }
+  .nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--sfb-surface);
+    border-bottom: 1px solid var(--sfb-border);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 24px 26px;
+    gap: 18px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.18s var(--ease-standard);
+  }
+  .navOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navActions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--sfb-border);
+  }
+}

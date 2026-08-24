@@ -1,0 +1,90 @@
+.wrap {
+  padding: 72px 24px 80px;
+  max-width: 780px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sfb-green-deep);
+  background: var(--sfb-green-tint);
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.wrap h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.lead {
+  font-size: 16px;
+  color: var(--sfb-ink-soft);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.grid h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.grid p {
+  font-size: 14px;
+  color: var(--sfb-ink-faint);
+  line-height: 1.6;
+}
+
+.pointGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.pointCard h4 {
+  font-size: 14.5px;
+  margin: 12px 0 6px;
+}
+
+.pointCard p {
+  font-size: 13px;
+  color: var(--sfb-ink-faint);
+  line-height: 1.55;
+}
+
+.pointIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--sfb-green-tint);
+  color: var(--sfb-green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footnote {
+  font-size: 12.5px;
+  color: var(--sfb-ink-faint);
+  border-top: 1px solid var(--sfb-border);
+  padding-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

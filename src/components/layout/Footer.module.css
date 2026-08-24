@@ -1,0 +1,87 @@
+.footer {
+  background: var(--sfb-green-deep);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 80px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  padding: 56px 24px 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.mark {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  background: rgba(0, 255, 156, 0.15);
+  color: var(--sfb-green-bright);
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+.disclaimer {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 420px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cols {
+  display: flex;
+  gap: 56px;
+  justify-content: flex-end;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.col h5 {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 4px;
+}
+
+.col a {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.col a:hover {
+  color: var(--sfb-green-bright);
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 700px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .cols {
+    justify-content: flex-start;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,131 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--sfb-bg);
+}
+
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  background: var(--sfb-green-deep);
+  padding: 22px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.brand {
+  padding: 0 8px;
+  margin-bottom: 24px;
+}
+
+.mark {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--sfb-green-bright);
+  letter-spacing: 0.03em;
+}
+
+.sidebar :global(a) {
+  color: rgba(255, 255, 255, 0.65);
+}
+.sidebar :global(a:hover) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--sfb-surface);
+  border-bottom: 1px solid var(--sfb-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.left h2 {
+  font-size: 17px;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.adminEmail {
+  font-size: 13px;
+  color: var(--sfb-ink-faint);
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--sfb-red-tint);
+  color: var(--sfb-red);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+}
+
+.content {
+  padding: 28px 28px 60px;
+  max-width: 1160px;
+}
+
+.drawerOverlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .menuBtn { display: flex; }
+  .drawerOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 61, 46, 0.28);
+    z-index: 90;
+  }
+  .drawer {
+    width: 240px;
+    height: 100%;
+    background: var(--sfb-green-deep);
+    padding: 22px 14px;
+  }
+  .drawer :global(a) {
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .content {
+    padding: 20px 16px 48px;
+  }
+  .adminEmail {
+    display: none;
+  }
+}

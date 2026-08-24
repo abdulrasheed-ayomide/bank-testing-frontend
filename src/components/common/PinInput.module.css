@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.box {
+  width: 52px;
+  height: 58px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  border: 1.5px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--sfb-bg);
+  transition: border-color 0.15s var(--ease-standard), box-shadow 0.15s var(--ease-standard);
+}
+
+.box:focus {
+  outline: none;
+  border-color: var(--sfb-green);
+  box-shadow: 0 0 0 3px var(--sfb-green-glow);
+  background: var(--sfb-surface);
+}
+
+.errorBox {
+  border-color: var(--sfb-red);
+}
+
+.error {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--sfb-red);
+}

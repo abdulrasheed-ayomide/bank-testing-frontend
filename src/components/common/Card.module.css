@@ -1,0 +1,10 @@
+.card {
+  background: var(--sfb-surface);
+  border: 1px solid var(--sfb-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.padded {
+  padding: 24px;
+}

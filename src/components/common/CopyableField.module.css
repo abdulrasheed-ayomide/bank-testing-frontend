@@ -1,0 +1,27 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.value {
+  font-size: 15px;
+  letter-spacing: 0.03em;
+}
+
+.icon {
+  color: var(--sfb-ink-faint);
+  transition: color 0.15s var(--ease-standard);
+}
+
+.wrap:hover .icon {
+  color: var(--sfb-green);
+}
+
+.iconSuccess {
+  color: var(--sfb-green);
+}

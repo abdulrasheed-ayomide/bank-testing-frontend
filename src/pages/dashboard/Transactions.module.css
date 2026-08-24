@@ -1,0 +1,103 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: var(--sfb-surface);
+  border: 1px solid var(--sfb-border-strong);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sfb-ink-soft);
+}
+.filterBtn:hover {
+  border-color: var(--sfb-green);
+}
+
+.filterActive {
+  background: var(--sfb-green-deep);
+  border-color: var(--sfb-green-deep);
+  color: #fff;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sfb-ink-faint);
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--sfb-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--sfb-border);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.right {
+  text-align: right;
+}
+
+.descCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: normal;
+}
+
+.txIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--sfb-green-tint);
+  color: var(--sfb-green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.descTitle {
+  font-weight: 500;
+}
+
+.descSub {
+  font-size: 12px;
+  color: var(--sfb-ink-faint);
+}
+
+.positive {
+  color: var(--sfb-green-deep);
+  font-weight: 600;
+}
+.negative {
+  color: var(--sfb-ink);
+  font-weight: 600;
+}

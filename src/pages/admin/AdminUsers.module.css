@@ -1,0 +1,30 @@
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sfb-surface);
+  border: 1px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  max-width: 420px;
+}
+
+.searchIcon {
+  color: var(--sfb-ink-faint);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13.5px;
+  background: transparent;
+}
+
+.row {
+  cursor: pointer;
+  transition: background 0.15s var(--ease-standard);
+}
+.row:hover {
+  background: var(--sfb-bg);
+}

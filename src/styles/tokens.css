@@ -1,0 +1,38 @@
+:root {
+  /* Color */
+  --sfb-bg: #FAFAF8;
+  --sfb-surface: #FFFFFF;
+  --sfb-ink: #0F1613;
+  --sfb-ink-soft: #4B5550;
+  --sfb-ink-faint: #8A928D;
+  --sfb-border: #E4E7E4;
+  --sfb-border-strong: #D3D8D3;
+
+  --sfb-green: #16C784;
+  --sfb-green-bright: #00FF9C;
+  --sfb-green-deep: #0B3D2E;
+  --sfb-green-tint: #E7FBF2;
+  --sfb-green-glow: rgba(0, 255, 156, 0.35);
+
+  --sfb-red: #E5484D;
+  --sfb-red-tint: #FDEDEE;
+  --sfb-amber: #C99A2E;
+  --sfb-amber-tint: #FBF3E0;
+
+  /* Type */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadow */
+  --shadow-card: 0 1px 2px rgba(15, 22, 19, 0.04), 0 1px 12px rgba(15, 22, 19, 0.03);
+  --shadow-raised: 0 4px 20px rgba(15, 22, 19, 0.08);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
