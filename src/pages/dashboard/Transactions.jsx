@@ -73,6 +73,13 @@ export default function Transactions() {
         ) : (
           <div className={styles.tableWrap}>
             <table className={styles.table}>
+              <colgroup>
+                <col className={styles.descriptionColumn} />
+                <col className={styles.referenceColumn} />
+                <col className={styles.dateColumn} />
+                <col className={styles.statusColumn} />
+                <col className={styles.amountColumn} />
+              </colgroup>
               <thead>
                 <tr>
                   <th>Description</th>

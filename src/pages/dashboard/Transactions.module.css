@@ -35,33 +35,29 @@
 
 .table {
   width: 100%;
+  min-width: 860px;
   border-collapse: collapse;
   font-size: 13.5px;
   table-layout: fixed;
 }
 
-.table th:first-child,
-.table td:first-child {
+.descriptionColumn {
   width: 38%;
 }
 
-.table th:nth-child(2),
-.table td:nth-child(2) {
+.referenceColumn {
   width: 21%;
 }
 
-.table th:nth-child(3),
-.table td:nth-child(3) {
+.dateColumn {
   width: 16%;
 }
 
-.table th:nth-child(4),
-.table td:nth-child(4) {
+.statusColumn {
   width: 12%;
 }
 
-.table th:nth-child(5),
-.table td:nth-child(5) {
+.amountColumn {
   width: 13%;
 }
 
@@ -74,16 +70,26 @@
   padding: 14px 22px;
   border-bottom: 1px solid var(--sfb-border);
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .table td {
-  padding: 14px 22px;
+  padding: 16px 22px;
   border-bottom: 1px solid var(--sfb-border);
   vertical-align: middle;
+  line-height: 1.45;
 }
 
 .table tr:last-child td {
   border-bottom: none;
+}
+
+.table tbody tr {
+  transition: background-color 140ms ease;
+}
+
+.table tbody tr:hover {
+  background: #fbfcfb;
 }
 
 .right {
@@ -94,6 +100,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+}
+
+.descCell > div:last-child {
   min-width: 0;
 }
 
@@ -131,62 +141,7 @@
 
 @media (max-width: 700px) {
   .tableWrap {
-    overflow-x: visible;
-  }
-
-  .table,
-  .table tbody,
-  .table tr,
-  .table td {
-    display: block;
-    width: 100%;
-  }
-
-  .table thead {
-    display: none;
-  }
-
-  .table tr {
-    padding: 16px;
-    border-bottom: 1px solid var(--sfb-border);
-  }
-
-  .table tr:last-child {
-    border-bottom: none;
-  }
-
-  .table td,
-  .table th {
-    width: 100%;
-    padding: 8px 0;
-    border-bottom: none;
-    white-space: normal;
-  }
-
-  .table td::before {
-    content: attr(data-label);
-    display: block;
-    margin-bottom: 4px;
-    color: var(--sfb-ink-faint);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .table td:first-child {
-    padding-top: 0;
-  }
-
-  .table td:first-child::before {
-    display: none;
-  }
-
-  .table td:last-child {
-    padding-bottom: 0;
-  }
-
-  .right {
-    text-align: left;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
   }
 }
