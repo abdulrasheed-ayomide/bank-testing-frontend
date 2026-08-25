@@ -85,7 +85,7 @@ export default function Transactions() {
               <tbody>
                 {transactions.map((tx) => (
                   <tr key={tx.id}>
-                    <td>
+                    <td data-label="Description">
                       <div className={styles.descCell}>
                         <span className={styles.txIcon}><TxIcon type={tx.type} direction={tx.direction} /></span>
                         <div>
@@ -94,10 +94,10 @@ export default function Transactions() {
                         </div>
                       </div>
                     </td>
-                    <td className="mono">{tx.reference}</td>
-                    <td>{formatDate(tx.date)}</td>
-                    <td><Badge>{tx.status}</Badge></td>
-                    <td className={`${styles.right} mono ${tx.direction === 'DEBIT' || tx.type === 'DEBIT' ? styles.negative : styles.positive}`}>
+                    <td className="mono" data-label="Reference">{tx.reference}</td>
+                    <td data-label="Date">{formatDate(tx.date)}</td>
+                    <td data-label="Status"><Badge>{tx.status}</Badge></td>
+                    <td data-label="Amount" className={`${styles.right} mono ${tx.direction === 'DEBIT' || tx.type === 'DEBIT' ? styles.negative : styles.positive}`}>
                       {tx.direction === 'DEBIT' || tx.type === 'DEBIT' ? '−' : '+'}{formatCurrency(tx.amount, tx.currency)}
                     </td>
                   </tr>
