@@ -6,9 +6,41 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      '/auth': {
+        target: 'https://bank-testing-backend.onrender.com',
         changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
+      },
+      '/accounts': {
+        target: 'https://bank-testing-backend.onrender.com',
+        changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
+      },
+      '/transactions': {
+        target: 'https://bank-testing-backend.onrender.com',
+        changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
+      },
+      '/notifications': {
+        target: 'https://bank-testing-backend.onrender.com',
+        changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
+      },
+      '/profile': {
+        target: 'https://bank-testing-backend.onrender.com',
+        changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
+      },
+      '/admin': {
+        target: 'https://bank-testing-backend.onrender.com',
+        changeOrigin: true,
+        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
+        rewrite: (path) => `/api/v1${path}`,
       },
     },
   },
