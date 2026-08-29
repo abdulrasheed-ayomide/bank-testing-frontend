@@ -6,12 +6,26 @@ function unwrap(promise) {
 
 export async function adminLogin({ email, password }) {
   const data = await unwrap(api.post('/admin/login', { email, password }));
+  if (!data?.token) throw new Error('The login response did not include an admin token.');
   setAdminToken(data.token);
+  return data.admin;
+}
+
+export async function getAdminMe() {
+  const data = await unwrap(api.get('/admin/me'));
   return data.admin;
 }
 
 export function adminLogout() {
   return unwrap(api.post('/admin/logout'));
+}
+
+export function sendPartnershipMail(payload) {
+  const { recipientEmail, ...mailData } = payload;
+  return unwrap(api.post('/admin/send-partnership-mail', {
+    ...mailData,
+    email: recipientEmail,
+  }));
 }
 
 export function getOverview() {

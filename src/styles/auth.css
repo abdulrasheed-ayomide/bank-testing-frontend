@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Spring Financial Bank — Auth Pages
+   ========================================================================== */
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.auth-layout-panel {
+  background: linear-gradient(160deg, var(--sfb-navy) 0%, var(--sfb-navy-light) 60%, #0f3a63 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-layout-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 48px
+  );
+}
+
+@media (max-width: 900px) {
+  .auth-layout-panel {
+    display: none;
+  }
+}
+
+.auth-layout-panel-content {
+  position: relative;
+  max-width: 420px;
+}
+
+.auth-layout-panel-content h2 {
+  color: #ffffff;
+  font-size: var(--fs-2xl);
+}
+
+.auth-layout-panel-content p {
+  color: #d6e3f0;
+}
+
+.auth-panel-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-panel-list li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: var(--fs-sm);
+  color: #e2ecf6;
+}
+
+.auth-panel-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-panel-list li::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+}
+
+.auth-layout-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background-color: var(--sfb-bg);
+}
+
+.auth-layout-form-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-logo-link {
+  display: inline-flex;
+  margin-bottom: var(--space-8);
+}
+
+.auth-form-header {
+  margin-bottom: var(--space-6);
+}
+
+.auth-form-header h1 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+}
+
+.auth-form-footer {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--fs-sm);
+  color: var(--sfb-muted);
+}
+
+.auth-otp-resend {
+  text-align: center;
+  font-size: var(--fs-sm);
+  margin-top: var(--space-5);
+}
+
+.auth-otp-resend button {
+  background: none;
+  border: none;
+  color: var(--sfb-blue);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.auth-otp-resend button:disabled {
+  color: var(--sfb-muted-light);
+  cursor: not-allowed;
+}

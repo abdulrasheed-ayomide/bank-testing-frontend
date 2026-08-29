@@ -38,7 +38,7 @@ src/
 │   ├── auth/             # Login, Signup, VerifyEmail, ForgotPassword, ResetPassword
 │   ├── dashboard/        # Dashboard, Transactions, SendMoney, AddMoney, Notifications, Profile
 │   └── admin/             # AdminLogin, AdminDashboard, AdminUsers, AdminUserDetail,
-│                          #   AdminTransactions, AdminAuditLogs
+│                          #   AdminTransactions, AdminAuditLogs, PartnershipMail
 ├── context/             # AuthContext, AdminAuthContext, ToastContext
 ├── routes/              # ProtectedRoute, AdminProtectedRoute
 ├── services/            # api.js (axios instance) + one *Api.js file per backend resource
@@ -54,16 +54,15 @@ src/
 | `/login` `/signup` `/verify-email` `/forgot-password` `/reset-password` | User auth |
 | `/dashboard` `/dashboard/transactions` `/dashboard/send-money` `/dashboard/add-money` `/dashboard/notifications` `/dashboard/profile` | User dashboard (protected) |
 | `/admin/login` | Admin auth |
-| `/admin/dashboard` `/admin/users` `/admin/users/:id` `/admin/transactions` `/admin/audit-logs` | Admin dashboard (protected) |
+| `/admin/dashboard` `/admin/users` `/admin/users/:id` `/admin/transactions` `/admin/audit-logs` `/admin/partnership-mail` | Admin dashboard (protected) |
 
 ## Connected to the real backend
 
 Every page calls the real API through `services/*Api.js` — no mock data remains.
 `AuthContext` silently restores a logged-in session on page reload via `POST /auth/refresh`
 using the httpOnly cookie, so `ProtectedRoute` waits for that check to finish before deciding
-whether to redirect to `/login`. `AdminAuthContext` deliberately does **not** persist across
-reloads — there's no admin refresh-token flow, so a reload means logging back in. That's an
-intentional simplicity choice for the admin flow.
+whether to redirect to `/login`. `AdminAuthContext` persists the separate admin JWT in
+`localStorage`, verifies it with `GET /admin/me`, and returns to the admin login after an admin 401.
 
 ## Notable implementation notes
 

@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Spring Financial Bank — Forms
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--sfb-ink);
+  margin-bottom: var(--space-2);
+}
+
+.form-hint {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--sfb-muted-light);
+  margin-top: var(--space-2);
+}
+
+.form-error {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--sfb-danger);
+  margin-top: var(--space-2);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--sfb-ink);
+  background-color: var(--sfb-surface);
+  border: 1px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.9rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--sfb-muted-light);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--sfb-blue);
+  box-shadow: 0 0 0 3px var(--sfb-blue-light);
+}
+
+.form-input.has-error,
+.form-select.has-error,
+.form-textarea.has-error {
+  border-color: var(--sfb-danger);
+}
+.form-input.has-error:focus {
+  box-shadow: 0 0 0 3px var(--sfb-danger-bg);
+}
+
+.form-input:disabled,
+.form-select:disabled,
+.form-textarea:disabled {
+  background-color: var(--sfb-bg);
+  color: var(--sfb-muted-light);
+  cursor: not-allowed;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* --- Input with leading/trailing addon (e.g. currency symbol) --- */
+.input-group {
+  display: flex;
+  align-items: stretch;
+}
+.input-group-addon {
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  background-color: var(--sfb-bg);
+  border: 1px solid var(--sfb-border-strong);
+  color: var(--sfb-muted);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+.input-group .form-input {
+  border-radius: 0;
+}
+.input-group-addon:first-child {
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+.input-group-addon:last-child {
+  border-left: none;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.input-group > .form-input:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+.input-group > .form-input:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* --- Password field with visibility toggle --- */
+.password-field {
+  position: relative;
+}
+.password-field .form-input {
+  padding-right: 2.6rem;
+}
+.password-toggle {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--sfb-muted-light);
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+.password-toggle:hover {
+  color: var(--sfb-navy);
+}
+
+/* --- Checkbox / radio --- */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--sfb-muted);
+}
+.checkbox-row input[type='checkbox'] {
+  margin-top: 0.2rem;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--sfb-navy);
+  flex-shrink: 0;
+}
+
+/* --- OTP input row --- */
+.otp-inputs {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+}
+.otp-inputs input {
+  width: 3rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: var(--fs-xl);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border: 1px solid var(--sfb-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--sfb-surface);
+  color: var(--sfb-ink);
+}
+.otp-inputs input:focus {
+  outline: none;
+  border-color: var(--sfb-blue);
+  box-shadow: 0 0 0 3px var(--sfb-blue-light);
+}
+
+@media (max-width: 420px) {
+  .otp-inputs input {
+    width: 2.5rem;
+    height: 3rem;
+    font-size: var(--fs-lg);
+  }
+}

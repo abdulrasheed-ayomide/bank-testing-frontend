@@ -10,6 +10,7 @@ const TITLES = {
   '/admin/users': 'Users',
   '/admin/transactions': 'Transactions',
   '/admin/audit-logs': 'Audit Logs',
+  '/admin/partnership-mail': 'Partnership mail',
 };
 
 export default function AdminLayout() {
@@ -28,7 +29,7 @@ export default function AdminLayout() {
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <span className={styles.mark}>SFB · Admin</span>
+            <span className={styles.mark}>SFB · Workspace</span>
         </div>
         <AdminSidebar />
       </aside>
@@ -37,7 +38,7 @@ export default function AdminLayout() {
         <div className={styles.drawerOverlay} onClick={() => setDrawerOpen(false)}>
           <aside className={styles.drawer} onClick={(e) => e.stopPropagation()}>
             <div className={styles.brand}>
-              <span className={styles.mark}>SFB · Admin</span>
+              <span className={styles.mark}>SFB · Workspace</span>
             </div>
             <AdminSidebar onNavigate={() => setDrawerOpen(false)} />
           </aside>

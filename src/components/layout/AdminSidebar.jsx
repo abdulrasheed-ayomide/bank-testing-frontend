@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { FiGrid, FiUsers, FiList, FiFileText } from 'react-icons/fi';
+import { FiGrid, FiUsers, FiList, FiFileText, FiMail } from 'react-icons/fi';
 import styles from './AdminSidebar.module.css';
 
 const LINKS = [
@@ -7,6 +7,7 @@ const LINKS = [
   { to: '/admin/users', label: 'Users', icon: <FiUsers /> },
   { to: '/admin/transactions', label: 'Transactions', icon: <FiList /> },
   { to: '/admin/audit-logs', label: 'Audit Logs', icon: <FiFileText /> },
+  { to: '/admin/partnership-mail', label: 'Partnership mail', icon: <FiMail /> },
 ];
 
 export default function AdminSidebar({ onNavigate }) {

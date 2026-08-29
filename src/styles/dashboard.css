@@ -1,0 +1,487 @@
+/* ==========================================================================
+   Spring Financial Bank — Dashboard Layout
+   ========================================================================== */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.dashboard-sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background-color: var(--sfb-surface);
+  border-right: 1px solid var(--sfb-border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.dashboard-sidebar-header {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--sfb-border);
+}
+
+.dashboard-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+}
+
+.dashboard-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-md);
+  color: var(--sfb-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.dashboard-nav-link:hover {
+  background-color: var(--sfb-bg);
+  color: var(--sfb-ink);
+}
+
+.dashboard-nav-link.is-active {
+  background-color: var(--sfb-blue-light);
+  color: var(--sfb-navy);
+}
+[data-theme='dark'] .dashboard-nav-link.is-active {
+  color: var(--sfb-blue);
+}
+
+.dashboard-sidebar-footer {
+  padding: var(--space-5);
+  border-top: 1px solid var(--sfb-border);
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .dashboard-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+    box-shadow: var(--shadow-lg);
+  }
+  .dashboard-sidebar.is-open {
+    transform: translateX(0);
+  }
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(11, 37, 69, 0.4);
+    z-index: 199;
+  }
+}
+
+/* --- Main area --- */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dashboard-topbar {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  background-color: var(--sfb-surface);
+  border-bottom: 1px solid var(--sfb-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.dashboard-topbar-title {
+  font-size: var(--fs-md);
+  margin: 0;
+  font-weight: 600;
+}
+
+.dashboard-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .dashboard-menu-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-topbar {
+    padding: 0 var(--space-4);
+  }
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .dashboard-content {
+    padding: var(--space-4);
+  }
+}
+
+/* --- Notification dot --- */
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--sfb-danger);
+  border: 1.5px solid var(--sfb-surface);
+}
+
+/* --- User menu --- */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-md);
+  color: var(--sfb-ink);
+  transition: background-color var(--transition-fast);
+}
+.user-menu-trigger:hover {
+  background-color: var(--sfb-bg);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--sfb-navy);
+  color: #ffffff;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-menu-name {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 540px) {
+  .user-menu-name {
+    display: none;
+  }
+}
+
+.user-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background-color: var(--sfb-surface);
+  border: 1px solid var(--sfb-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-3);
+  z-index: 60;
+}
+
+.user-menu-info {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2);
+}
+.user-menu-info strong {
+  font-size: var(--fs-sm);
+}
+
+.user-menu-dropdown button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.6rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--sfb-ink);
+  cursor: pointer;
+}
+.user-menu-dropdown button:hover {
+  background-color: var(--sfb-bg);
+}
+.user-menu-logout {
+  color: var(--sfb-danger) !important;
+}
+
+/* ==========================================================================
+   Dashboard widgets
+   ========================================================================== */
+
+/* --- Balance card --- */
+.balance-card {
+  background: linear-gradient(135deg, var(--sfb-navy) 0%, var(--sfb-navy-light) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+.balance-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+}
+.balance-card-label {
+  position: relative;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #aac4e0;
+  margin-bottom: var(--space-2);
+}
+.balance-card-amount {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--space-5);
+}
+.balance-card-meta {
+  position: relative;
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.balance-card-meta-item span {
+  display: block;
+}
+.balance-card-meta-item span:first-child {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9fb8d4;
+  margin-bottom: var(--space-1);
+}
+.balance-card-meta-item span:last-child {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+/* --- Quick actions --- */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+@media (max-width: 720px) {
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background-color: var(--sfb-surface);
+  border: 1px solid var(--sfb-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  color: var(--sfb-ink);
+}
+.quick-action-btn:hover {
+  border-color: var(--sfb-border-strong);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+.quick-action-btn .quick-action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--sfb-blue-light);
+  color: var(--sfb-blue);
+}
+.quick-action-btn span:last-child {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+/* --- Transaction list rows --- */
+.tx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--sfb-border);
+}
+.tx-row:last-child {
+  border-bottom: none;
+}
+
+.tx-row-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.tx-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.tx-icon.incoming {
+  background-color: var(--sfb-success-bg);
+  color: var(--sfb-success);
+}
+.tx-icon.outgoing {
+  background-color: var(--sfb-danger-bg);
+  color: var(--sfb-danger);
+}
+
+.tx-row-details {
+  min-width: 0;
+}
+.tx-row-details strong {
+  display: block;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-row-details span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--sfb-muted-light);
+}
+
+.tx-row-end {
+  text-align: right;
+  flex-shrink: 0;
+}
+.tx-row-amount {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  display: block;
+}
+.tx-row-amount.positive {
+  color: var(--sfb-success);
+}
+.tx-row-amount.negative {
+  color: var(--sfb-danger);
+}
+.tx-row-date {
+  font-size: var(--fs-xs);
+  color: var(--sfb-muted-light);
+}
+
+/* --- Profile photo upload --- */
+.photo-upload {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.photo-upload .avatar {
+  width: 64px;
+  height: 64px;
+  font-size: var(--fs-lg);
+}
+
+/* --- Notification list item --- */
+.notification-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--sfb-border);
+}
+.notification-item:last-child {
+  border-bottom: none;
+}
+.notification-item.is-unread {
+  background-color: var(--sfb-blue-light);
+}
+.notification-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--sfb-bg);
+  color: var(--sfb-blue);
+  flex-shrink: 0;
+}
+.notification-item-content {
+  flex: 1;
+  min-width: 0;
+}
+.notification-item-content strong {
+  display: block;
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-1);
+}
+.notification-item-content p {
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-1);
+}
+.notification-item-content time {
+  font-size: var(--fs-xs);
+  color: var(--sfb-muted-light);
+}

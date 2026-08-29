@@ -6,41 +6,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/auth': {
-        target: 'https://bank-testing-backend.onrender.com',
+      // Every backend call goes through src/services/api.js with
+      // baseURL '/api/v1' in dev (see .env.example). Since every real
+      // request already starts with /api, a single proxy rule covers
+      // auth, accounts, transactions, notifications, profile, and admin —
+      // there is no need for one rule per resource.
+      '/api': {
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
-      },
-      '/accounts': {
-        target: 'https://bank-testing-backend.onrender.com',
-        changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
-      },
-      '/transactions': {
-        target: 'https://bank-testing-backend.onrender.com',
-        changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
-      },
-      '/notifications': {
-        target: 'https://bank-testing-backend.onrender.com',
-        changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
-      },
-      '/profile': {
-        target: 'https://bank-testing-backend.onrender.com',
-        changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
-      },
-      '/admin': {
-        target: 'https://bank-testing-backend.onrender.com',
-        changeOrigin: true,
-        headers: { origin: 'https://bank-testing-frontend.vercel.app' },
-        rewrite: (path) => `/api/v1${path}`,
+        secure: false,
       },
     },
   },

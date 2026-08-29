@@ -35,6 +35,7 @@ import AdminUsers from './pages/admin/AdminUsers';
 import AdminUserDetail from './pages/admin/AdminUserDetail';
 import AdminTransactions from './pages/admin/AdminTransactions';
 import AdminAuditLogs from './pages/admin/AdminAuditLogs';
+import PartnershipMail from './pages/admin/PartnershipMail';
 
 import NotFound from './pages/NotFound';
 
@@ -92,6 +93,7 @@ export default function App() {
               <Route path="/admin/users/:id" element={<AdminUserDetail />} />
               <Route path="/admin/transactions" element={<AdminTransactions />} />
               <Route path="/admin/audit-logs" element={<AdminAuditLogs />} />
+              <Route path="/admin/partnership-mail" element={<PartnershipMail />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
